@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    
+    body {
+        @apply bg-[#6432A5] antialiased;
+        font-family: 'Montserrat', sans-serif;
+        min-width: 320px;
+    }
+
+    label {
+        @apply font-semibold text-gray-700 text-sm;
+    }
+
+    form {
+        @apply bg-gray-50 shadow-lg relative md:mx-auto md:mt-0 md:absolute left-0 top-4 sm:left-8 sm:top-8 rounded-xl px-5 py-5 w-full max-w-sm;
+    }
+
+    input {
+        @apply placeholder-gray-400 block border border-gray-300 rounded h-full w-full  focus:ring-2 focus:border-gray-300 focus:ring-[#6432A5] focus:outline-none text-sm bg-white disabled:opacity-50 pl-3 pr-3;
+    }
+
+    button {
+        @apply mt-6 disabled:cursor-not-allowed disabled:opacity-50 font-bold grid w-full justify-center items-center border rounded-lg py-4 px-8;
+    }
+}
