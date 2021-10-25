@@ -52,7 +52,7 @@ export default function Home(couriers) {
 			"place_changed",
 			fillInDestinationAddress
 		);
-		if (originId && destinationId) {
+		if (hidden && originId && destinationId) {
 			calculateAndDisplayRoute();
 		}
 	}
@@ -167,6 +167,16 @@ export default function Home(couriers) {
 			country: input.country2.value,
 		});
 		setHidden(hidden ? false : true);
+		if (hidden) {
+			setDestinationAddress({});
+			setDestinationId();
+			document.getElementById("unit2").value = "";
+			document.getElementById("destination").value = "";
+			document.getElementById("postcode2").value = "";
+			document.getElementById("locality2").value = "";
+			document.getElementById("province2").value = "";
+			document.getElementById("country2").value = "";
+		}
 	}
 
 	useEffect(() => {
@@ -216,7 +226,6 @@ export default function Home(couriers) {
 									name='unit'
 									autoComplete='off'
 									placeholder='Unit, Floor, Suite, etc.'
-									className=''
 								/>
 							</span>
 						</label>
@@ -228,7 +237,6 @@ export default function Home(couriers) {
 									name='origin'
 									placeholder='Lot, Apartment, Building, etc.'
 									autoComplete='off'
-									className=''
 								/>
 							</span>
 						</label>
@@ -237,7 +245,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>City</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										id='locality'
 										autoComplete='off'
 										name='locality'
@@ -249,7 +256,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Province</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										autoComplete='off'
 										id='province'
 										name='province'
@@ -263,7 +269,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Zip code</span>
 								<span className='block relative h-8'>
 									<input
-										className='postcode '
 										autoComplete='off'
 										id='postcode'
 										name='postcode'
@@ -275,7 +280,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Country</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										autoComplete='off'
 										id='country'
 										name='country'
@@ -315,7 +319,6 @@ export default function Home(couriers) {
 									name='unit2'
 									autoComplete='off'
 									placeholder='Unit, suite, or floor #'
-									className=''
 								/>
 							</span>
 						</label>
@@ -325,7 +328,6 @@ export default function Home(couriers) {
 								<input
 									placeholder='Lot, apartment, building'
 									autoComplete='off'
-									className=''
 									id='destination'
 									name='destination'
 								/>
@@ -336,7 +338,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>City</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										autoComplete='off'
 										id='locality2'
 										name='locality2'
@@ -348,7 +349,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Province</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										autoComplete='off'
 										id='province2'
 										name='province2'
@@ -363,7 +363,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Zip code</span>
 								<span className='block relative h-8'>
 									<input
-										className='postcode '
 										autoComplete='off'
 										id='postcode2'
 										name='postcode2'
@@ -375,7 +374,6 @@ export default function Home(couriers) {
 								<span className='text-sm'>Country</span>
 								<span className='block relative h-8'>
 									<input
-										className=''
 										autoComplete='off'
 										id='country2'
 										name='country2'
